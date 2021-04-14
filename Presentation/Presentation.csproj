@@ -1,0 +1,228 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\EducationTheme\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\EducationTheme\404.html" />
+    <None Include="wwwroot\EducationTheme\about.html" />
+    <None Include="wwwroot\EducationTheme\about2.html" />
+    <None Include="wwwroot\EducationTheme\blog-item.html" />
+    <None Include="wwwroot\EducationTheme\blog-rightside.html" />
+    <None Include="wwwroot\EducationTheme\career.html" />
+    <None Include="wwwroot\EducationTheme\contact.html" />
+    <None Include="wwwroot\EducationTheme\css\animate.css" />
+    <None Include="wwwroot\EducationTheme\css\bootstrap.min.css" />
+    <None Include="wwwroot\EducationTheme\css\cd-hero copy.css" />
+    <None Include="wwwroot\EducationTheme\css\cd-hero.css" />
+    <None Include="wwwroot\EducationTheme\css\flexslider.css" />
+    <None Include="wwwroot\EducationTheme\css\font-awesome.css" />
+    <None Include="wwwroot\EducationTheme\css\font-awesome.min.css" />
+    <None Include="wwwroot\EducationTheme\css\owl.carousel.css" />
+    <None Include="wwwroot\EducationTheme\css\owl.theme.css" />
+    <None Include="wwwroot\EducationTheme\css\presets\preset1.css" />
+    <None Include="wwwroot\EducationTheme\css\presets\preset2.css" />
+    <None Include="wwwroot\EducationTheme\css\presets\preset3.css" />
+    <None Include="wwwroot\EducationTheme\css\presets\preset4.css" />
+    <None Include="wwwroot\EducationTheme\css\presets\preset5.css" />
+    <None Include="wwwroot\EducationTheme\css\presets\preset6.css" />
+    <None Include="wwwroot\EducationTheme\css\prettyPhoto.css" />
+    <None Include="wwwroot\EducationTheme\css\responsive.css" />
+    <None Include="wwwroot\EducationTheme\css\style.css" />
+    <None Include="wwwroot\EducationTheme\elements.html" />
+    <None Include="wwwroot\EducationTheme\faq.html" />
+    <None Include="wwwroot\EducationTheme\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\EducationTheme\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\EducationTheme\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\EducationTheme\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\EducationTheme\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\EducationTheme\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\EducationTheme\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\EducationTheme\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="wwwroot\EducationTheme\fonts\jaapokki\jaapokki-regular.eot" />
+    <None Include="wwwroot\EducationTheme\fonts\jaapokki\jaapokki-regular.svg" />
+    <None Include="wwwroot\EducationTheme\fonts\jaapokki\jaapokki-regular.ttf" />
+    <None Include="wwwroot\EducationTheme\fonts\jaapokki\jaapokki-regular.woff" />
+    <None Include="wwwroot\EducationTheme\images\banner\banner1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\banner\banner2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\bg_play_pause.png" />
+    <None Include="wwwroot\EducationTheme\images\blog\author.jpg" />
+    <None Include="wwwroot\EducationTheme\images\blog\avator1.png" />
+    <None Include="wwwroot\EducationTheme\images\blog\avator2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\blog\blog-small1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\blog\blog-small2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\blog\blog-small3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\blog\blog1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\blog\blog2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\blog\blog3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\bx_loader.gif" />
+    <None Include="wwwroot\EducationTheme\images\clients\client1.png" />
+    <None Include="wwwroot\EducationTheme\images\clients\client2.png" />
+    <None Include="wwwroot\EducationTheme\images\clients\client3.png" />
+    <None Include="wwwroot\EducationTheme\images\clients\client4.png" />
+    <None Include="wwwroot\EducationTheme\images\clients\client5.png" />
+    <None Include="wwwroot\EducationTheme\images\clients\client6.png" />
+    <None Include="wwwroot\EducationTheme\images\clients\client7.png" />
+    <None Include="wwwroot\EducationTheme\images\clients\client8.png" />
+    <None Include="wwwroot\EducationTheme\images\clients\testimonial1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\clients\testimonial2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\clients\testimonial3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\controls.png" />
+    <None Include="wwwroot\EducationTheme\images\footer-bg.jpg" />
+    <None Include="wwwroot\EducationTheme\images\gallery\1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\gallery\2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\gallery\3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\gallery\4.jpg" />
+    <None Include="wwwroot\EducationTheme\images\gallery\5.jpg" />
+    <None Include="wwwroot\EducationTheme\images\gallery\6.jpg" />
+    <None Include="wwwroot\EducationTheme\images\gallery\7.jpg" />
+    <None Include="wwwroot\EducationTheme\images\gallery\8.jpg" />
+    <None Include="wwwroot\EducationTheme\images\gallery\9.jpg" />
+    <None Include="wwwroot\EducationTheme\images\image-block-bg.jpg" />
+    <None Include="wwwroot\EducationTheme\images\landing\hero-image.png" />
+    <None Include="wwwroot\EducationTheme\images\landing\main-bg.jpg" />
+    <None Include="wwwroot\EducationTheme\images\landing\screenshot-1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\landing\screenshot-2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\landing\screenshot-3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\landing\screenshot-4.jpg" />
+    <None Include="wwwroot\EducationTheme\images\landing\screenshot-5.jpg" />
+    <None Include="wwwroot\EducationTheme\images\landing\screenshot-6.jpg" />
+    <None Include="wwwroot\EducationTheme\images\logo.png" />
+    <None Include="wwwroot\EducationTheme\images\logo2.png" />
+    <None Include="wwwroot\EducationTheme\images\marker.png" />
+    <None Include="wwwroot\EducationTheme\images\overaly.png" />
+    <None Include="wwwroot\EducationTheme\images\pages\about-1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\pages\about-2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\pages\service-1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\pages\service-2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\pages\service-3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\pages\service-single.jpg" />
+    <None Include="wwwroot\EducationTheme\images\parallax\parallax1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\parallax\parallax2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\parallax\parallax3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\portfolio\portfolio-bg1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\portfolio\portfolio-bg2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\portfolio\portfolio-bg3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\portfolio\portfolio1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\portfolio\portfolio2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\portfolio\portfolio3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\portfolio\portfolio4.jpg" />
+    <None Include="wwwroot\EducationTheme\images\portfolio\portfolio5.jpg" />
+    <None Include="wwwroot\EducationTheme\images\portfolio\portfolio6.jpg" />
+    <None Include="wwwroot\EducationTheme\images\portfolio\portfolio7.jpg" />
+    <None Include="wwwroot\EducationTheme\images\portfolio\portfolio8.jpg" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_rounded\loader.gif" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_rounded\sprite.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_square\btnNext.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_square\contentPattern.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_square\loader.gif" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\dark_square\sprite.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\default\default_thumb.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\default\loader.gif" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\default\sprite.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\default\sprite_next.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\default\sprite_prev.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\default\sprite_x.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\default\sprite_y.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\facebook\btnNext.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\facebook\btnPrevious.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\facebook\loader.gif" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\facebook\sprite.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\light_rounded\btnNext.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\light_rounded\loader.gif" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\light_rounded\sprite.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\light_square\btnNext.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\light_square\btnPrevious.png" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\light_square\loader.gif" />
+    <None Include="wwwroot\EducationTheme\images\prettyPhoto\light_square\sprite.png" />
+    <None Include="wwwroot\EducationTheme\images\slider2\bg1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\slider2\bg2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\slider2\bg3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\slider\bg-thumb1.png" />
+    <None Include="wwwroot\EducationTheme\images\slider\bg-thumb2.png" />
+    <None Include="wwwroot\EducationTheme\images\slider\bg1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\slider\bg2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\slider\bg3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\slider\video-replace-mobile.jpg" />
+    <None Include="wwwroot\EducationTheme\images\tab\featured-tab1.png" />
+    <None Include="wwwroot\EducationTheme\images\tab\featured-tab2.png" />
+    <None Include="wwwroot\EducationTheme\images\tab\featured-tab3.png" />
+    <None Include="wwwroot\EducationTheme\images\team\team1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\team\team2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\team\team3.jpg" />
+    <None Include="wwwroot\EducationTheme\images\team\team4.jpg" />
+    <None Include="wwwroot\EducationTheme\images\team\testimonial1.jpg" />
+    <None Include="wwwroot\EducationTheme\images\team\testimonial2.jpg" />
+    <None Include="wwwroot\EducationTheme\images\team\testimonial3.jpg" />
+    <None Include="wwwroot\EducationTheme\index-2.html" />
+    <None Include="wwwroot\EducationTheme\index-3.html" />
+    <None Include="wwwroot\EducationTheme\index-4.html" />
+    <None Include="wwwroot\EducationTheme\index.html" />
+    <None Include="wwwroot\EducationTheme\js\bootstrap.min.js" />
+    <None Include="wwwroot\EducationTheme\js\cd-hero.js" />
+    <None Include="wwwroot\EducationTheme\js\custom.js" />
+    <None Include="wwwroot\EducationTheme\js\gmap3.js" />
+    <None Include="wwwroot\EducationTheme\js\html5shiv.js" />
+    <None Include="wwwroot\EducationTheme\js\ini.isotope.js" />
+    <None Include="wwwroot\EducationTheme\js\isotope.js" />
+    <None Include="wwwroot\EducationTheme\js\jquery.counterup.min.js" />
+    <None Include="wwwroot\EducationTheme\js\jquery.easing.1.3.js" />
+    <None Include="wwwroot\EducationTheme\js\jquery.flexslider.js" />
+    <None Include="wwwroot\EducationTheme\js\jquery.js" />
+    <None Include="wwwroot\EducationTheme\js\jquery.min.js" />
+    <None Include="wwwroot\EducationTheme\js\jquery.prettyPhoto.js" />
+    <None Include="wwwroot\EducationTheme\js\owl.carousel.js" />
+    <None Include="wwwroot\EducationTheme\js\respond.min.js" />
+    <None Include="wwwroot\EducationTheme\js\smoothscroll.js" />
+    <None Include="wwwroot\EducationTheme\js\style-switcher.js" />
+    <None Include="wwwroot\EducationTheme\js\waypoints.min.js" />
+    <None Include="wwwroot\EducationTheme\js\wow.min.js" />
+    <None Include="wwwroot\EducationTheme\portfolio-classic.html" />
+    <None Include="wwwroot\EducationTheme\portfolio-item.html" />
+    <None Include="wwwroot\EducationTheme\portfolio-static.html" />
+    <None Include="wwwroot\EducationTheme\pricing.html" />
+    <None Include="wwwroot\EducationTheme\service-single.html" />
+    <None Include="wwwroot\EducationTheme\service.html" />
+    <None Include="wwwroot\EducationTheme\service2.html" />
+    <None Include="wwwroot\EducationTheme\team.html" />
+    <None Include="wwwroot\EducationTheme\testimonial.html" />
+    <None Include="wwwroot\EducationTheme\typography.html" />
+    <None Include="wwwroot\EducationTheme\videos\video.mp4" />
+    <None Include="wwwroot\EducationTheme\videos\video.webm" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj" />
+    <ProjectReference Include="..\DataContext\DataContext.csproj" />
+  </ItemGroup>
+
+</Project>
