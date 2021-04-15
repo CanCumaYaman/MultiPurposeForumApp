@@ -1,6 +1,6 @@
 ﻿using Core.Entities.Abstract;
-
-using Entity.Base;
+using Core.Entities.Base;
+using Core.Entities.Conrete;
 using System;
 using System.Collections.Generic;
 using System.Text;

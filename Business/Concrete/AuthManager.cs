@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Entities.Conrete;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using Core.Utilities.Security.Hashing;

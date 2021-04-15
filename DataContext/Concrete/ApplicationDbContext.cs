@@ -1,4 +1,5 @@
-﻿using Entity.Concrete;
+﻿using Core.Entities.Conrete;
+using Entity.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,9 @@ namespace DataContext.Concrete
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionComment> QuestionComments { get; set; }
         public DbSet<ArticleComment> ArticleComments { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+       
 
         public ApplicationDbContext(DbContextOptions options):base(options)
         {

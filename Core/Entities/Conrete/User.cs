@@ -1,14 +1,15 @@
 ﻿using Core.Entities.Abstract;
-
-using Entity.Base;
+using Core.Entities.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Entity.Concrete
+namespace Core.Entities.Conrete
 {
-   public class User:BaseEntity,IEntity
+   public class User:BaseEntity, IEntity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -17,9 +18,5 @@ namespace Entity.Concrete
         public byte[] PasswordSalt { get; set; }
         [MaxLength(500)]
         public byte[] PasswordHash { get; set; }
-        public ICollection<Article> Articles { get; set; }
-        public ICollection<Question> Questions { get; set; }
-        public ICollection<ArticleComment> ArticleComments { get; set; }
-        public ICollection<QuestionComment> QuestionComments { get; set; }
     }
 }

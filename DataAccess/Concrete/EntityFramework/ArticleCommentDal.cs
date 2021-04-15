@@ -1,5 +1,4 @@
 ﻿using Core.DataAccess.Concrete.EntityFramework;
-using Core.Entities.Conrete;
 using DataAccess.Abstract;
 using DataContext.Concrete;
 using Entity.Concrete;
@@ -11,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class UserDal : GenericRepository<User>,IUserDal
+   public class ArticleCommentDal:GenericRepository<ArticleComment>,IArticleCommentDal
     {
-        public UserDal(ApplicationDbContext context):base(context)
+        public ArticleCommentDal(ApplicationDbContext context):base(context)
         {
 
         }
