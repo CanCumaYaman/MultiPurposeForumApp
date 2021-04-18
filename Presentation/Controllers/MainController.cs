@@ -11,9 +11,11 @@ namespace Presentation.Controllers
     public class MainController : Controller
     {
         IQuestionService _questionService;
-        public MainController(IQuestionService questionService)
+        IQuestionCommentService _questionCommentService;
+        public MainController(IQuestionService questionService, IQuestionCommentService questionCommentService)
         {
             _questionService = questionService;
+            _questionCommentService = questionCommentService;
         }
         public IActionResult Index()
         {
@@ -36,6 +38,25 @@ namespace Presentation.Controllers
                      UserId=question.UserId
             };
            var result=_questionService.Add(addedQuestion);
+            if (result.Success)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View("AskQuestion");
+        }
+        [HttpPost]
+        public IActionResult AddComment(QuestionComment questionComment )
+        {
+            var addedQuestionComment = new QuestionComment
+            {
+                Comment = questionComment.Comment,
+                 UserId=questionComment.UserId,
+                 QuestionId=questionComment.QuestionId,
+                  CreatedDate=DateTime.UtcNow,
+                 
+                 
+            };
+            var result = _questionCommentService.Add(addedQuestionComment);
             if (result.Success)
             {
                 return RedirectToAction("Index", "Home");

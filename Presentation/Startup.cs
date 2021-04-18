@@ -38,6 +38,8 @@ namespace Presentation
             services.AddTransient<IUserDal, UserDal>();
             services.AddTransient<IQuestionService, QuestionManager>();
             services.AddTransient<IQuestionDal, QuestionDal>();
+            services.AddTransient<IQuestionCommentService, QuestionCommentManager>();
+            services.AddTransient<IQuestionCommentDal, QuestionCommentDal>();
             services.AddTransient<IAuthService, AuthManager>();
             
             services.AddControllersWithViews().AddRazorRuntimeCompilation();

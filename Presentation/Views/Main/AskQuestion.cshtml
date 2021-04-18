@@ -23,8 +23,26 @@
         </div>
         <input type="submit" value="Ask Question" class="btn btn-info" />
 
-    </form> 
+    </form>
+    <br />
+    <br />
+    <form method="post" action="/Main/AddComment">
+        <div class="form-group mb-3">
+            <label>Comment</label>
+            <input type="text" class="form-control" placeholder="Comment" name="Comment" />
+        </div>
+        <div class="form-group mb-3">
+            <label>UserId</label>
+            <input type="number" class="form-control" placeholder="UserId" name="UserId" />
+        </div>
+        <div class="form-group mb-3">
+            <label>QuestionId</label>
+            <input type="number" class="form-control" placeholder="QuestionId" name="QuestionId" />
+        </div>
+        
+        <input type="submit" value="Add Comment" class="btn btn-info" />
 
+    </form>
 
 </div>
 
