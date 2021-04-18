@@ -29,12 +29,15 @@ namespace Presentation
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddTransient<IArticleService, ArticleManager>();
             services.AddTransient<IArticleDal, ArticleDal>();
             services.AddTransient<IQuestionService, QuestionManager>();
             services.AddTransient<IQuestionDal, QuestionDal>();
             services.AddTransient<IUserService, UserManager>();
             services.AddTransient<IUserDal, UserDal>();
+            services.AddTransient<IQuestionService, QuestionManager>();
+            services.AddTransient<IQuestionDal, QuestionDal>();
             services.AddTransient<IAuthService, AuthManager>();
             
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
