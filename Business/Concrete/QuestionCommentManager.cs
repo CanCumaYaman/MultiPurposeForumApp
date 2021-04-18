@@ -36,6 +36,7 @@ namespace Business.Concrete
         public IResult Delete(QuestionComment questionComment)
         {
             _questionCommentDal.Delete(questionComment);
+            
             return new SuccessResult("Your Comment successfull deleted");
         }
 
