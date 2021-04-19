@@ -26,5 +26,6 @@ namespace Business.Abstract
         IResult Update(User user);
         IResult UpdateRange(List<User> users);
         IResult Exist(Expression<Func<User, bool>> filter);
+        List<OperationClaim> GetClaims(User user);
     }
 }

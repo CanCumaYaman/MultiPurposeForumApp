@@ -3,6 +3,8 @@ using Core.Entities.Conrete;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using Core.Utilities.Security.Hashing;
+using Core.Utilities.Security.JWT.Abstract;
+using Core.Utilities.Security.JWT.Concrete;
 using Entity.Concrete;
 using Entity.DTOs;
 using System;
@@ -15,10 +17,12 @@ namespace Business.Concrete
 {
     public class AuthManager : IAuthService
     {
-        IUserService _userService;
-        public AuthManager(IUserService userService)
+        private IUserService _userService;
+        private ITokenHelper _tokenHelper;
+        public AuthManager(IUserService userService, ITokenHelper tokenHelper)
         {
             _userService = userService;
+            _tokenHelper = tokenHelper;
         }
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
@@ -59,6 +63,12 @@ namespace Business.Concrete
                 return new ErrorResult("This user is valid");
             }
             return new SuccessResult();
+        }
+        public IDataResult<AccessToken> CreateAccessToken(User user)
+        {
+            var claims = _userService.GetClaims(user);
+            var accessToken = _tokenHelper.CreateToken(user, claims);
+            return new SuccessDataResult<AccessToken>(accessToken, "Access Token Created");
         }
     }
 }

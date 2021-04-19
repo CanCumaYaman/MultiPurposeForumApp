@@ -85,15 +85,22 @@ namespace Presentation.Controllers
         [HttpPost]
         public IActionResult LoginConfirm(UserForLoginDto userForLoginDto)
         {
-           var result= _authService.Login(userForLoginDto);
+
+            
+            var userToLogin = _authService.Login(userForLoginDto);
+            if (!userToLogin.Success)
+            {
+                return View("Login");
+                
+            }
+            var result = _authService.CreateAccessToken(userToLogin.Data);
+
             if (result.Success)
             {
-               
                 return View("Main");
             }
-            
-            return View("Login");
-           
+            return View("Main");
+
 
         }
         [HttpGet]

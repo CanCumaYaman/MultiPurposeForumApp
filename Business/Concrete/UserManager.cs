@@ -99,5 +99,9 @@ namespace Business.Concrete
             _userDal.UpdateRange(users);
             return new SuccessResult("Users successfully updated");
         }
+        public List<OperationClaim> GetClaims(User user)
+        {
+            return _userDal.GetClaims(user);
+        }
     }
 }
