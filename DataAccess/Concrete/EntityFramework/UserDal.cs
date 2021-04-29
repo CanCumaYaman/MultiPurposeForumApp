@@ -3,6 +3,7 @@ using Core.Entities.Conrete;
 using DataAccess.Abstract;
 using DataContext.Concrete;
 using Entity.Concrete;
+using Entity.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,18 @@ namespace DataAccess.Concrete.EntityFramework
                 return result.ToList();
 
             
+        }
+
+        public UserFullNameDto GetFullNameByMail(string mail)
+        {
+            var result = from user in _context.Users
+                         where user.Email == mail
+                         select new UserFullNameDto
+                         {
+                             FirstName = user.FirstName,
+                            LastName = user.LastName
+                         };
+            return result.SingleOrDefault();
         }
     }
 }

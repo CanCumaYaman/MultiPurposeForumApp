@@ -2,6 +2,7 @@
 using Core.Utilities.Results.Abstract;
 
 using Entity.Concrete;
+using Entity.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,5 +28,6 @@ namespace Business.Abstract
         IResult UpdateRange(List<User> users);
         IResult Exist(Expression<Func<User, bool>> filter);
         List<OperationClaim> GetClaims(User user);
+        IDataResult<UserFullNameDto> GetFullNameByMail(string mail);
     }
 }

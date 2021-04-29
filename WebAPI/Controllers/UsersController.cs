@@ -29,5 +29,17 @@ namespace WebAPI2.Controllers
             return BadRequest(result);
 
         }
+        [HttpGet("getfullname")]
+        
+        public IActionResult GetByFullNameByEmail(string mail)
+        {
+            var result = _userService.GetFullNameByMail(mail);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
     }
 }

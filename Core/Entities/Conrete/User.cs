@@ -18,5 +18,8 @@ namespace Core.Entities.Conrete
         public byte[] PasswordSalt { get; set; }
         [MaxLength(500)]
         public byte[] PasswordHash { get; set; }
+       
+                
+                
     }
 }
