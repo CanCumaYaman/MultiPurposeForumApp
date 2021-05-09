@@ -29,8 +29,8 @@ namespace WebAPI2.Controllers
             return BadRequest(result);
 
         }
-        [HttpGet("getfullname")]
-        
+        [HttpGet("getfullnamebymail")]
+
         public IActionResult GetByFullNameByEmail(string mail)
         {
             var result = _userService.GetFullNameByMail(mail);
@@ -40,6 +40,35 @@ namespace WebAPI2.Controllers
             }
             return BadRequest(result);
 
+         
         }
+
+        [HttpGet("getfullnamebyid")]
+
+        public IActionResult GetByFullNameById(int id)
+        {
+            var result = _userService.GetFullNameById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+
+        }
+
+        [HttpGet("getuserid")]
+
+         public IActionResult GetUserIdByMail(string mail)
+         {
+            var result = _userService.Find(p => p.Email == mail);
+             if (result.Success)
+             {
+                 return Ok(result.Data.Id);
+             }
+             return BadRequest(result);
+
+         }
+         
     }
 }

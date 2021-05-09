@@ -40,6 +40,12 @@ namespace Core.DataAccess.Concrete.EntityFramework
             return await _dbSet.SingleOrDefaultAsync(filter);
         }
 
+        public TEntity Get(Expression<Func<TEntity, bool>> filter)
+        {
+            
+                return _dbSet.SingleOrDefault(filter);
+            
+        }
         public TEntity GetById(int id)
         {
             return _dbSet.Find(id);

@@ -17,8 +17,10 @@ namespace Business.Abstract
         IDataResult<List<User>> GetAll(Expression<Func<User, bool>> filter = null);
         Task<List<User>> GetAllAsync(Expression<Func<User, bool>> filter = null);
         IDataResult<User> Find(Expression<Func<User, bool>> filter);
+
         Task<User> FindAsync(Expression<Func<User, bool>> filter);
         IDataResult<User> GetById(int id);
+        User GetByMail(string email);
         Task<User> GetByIdAsync(int id);
         IResult Add(User user);
         IResult AddRange(List<User> users);
@@ -29,5 +31,6 @@ namespace Business.Abstract
         IResult Exist(Expression<Func<User, bool>> filter);
         List<OperationClaim> GetClaims(User user);
         IDataResult<UserFullNameDto> GetFullNameByMail(string mail);
+        IDataResult<UserFullNameDto> GetFullNameById(int id);
     }
 }

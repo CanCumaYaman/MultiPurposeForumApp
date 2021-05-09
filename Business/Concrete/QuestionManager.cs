@@ -27,7 +27,16 @@ namespace Business.Concrete
             {
                 return new ErrorResult("This Question already added");
             }
-            _questionDal.Add(question);
+            var addedQuestion = new Question
+            {
+                Title = question.Title,
+                Body = question.Body,
+                Topic = question.Topic,
+                CreatedDate = DateTime.UtcNow,
+                UserId = question.UserId,
+
+            };
+            _questionDal.Add(addedQuestion);
             return new SuccessResult("Your Question successfully posted");
         }
 
@@ -88,9 +97,19 @@ namespace Business.Concrete
             return _questionDal.GetByIdAsync(id);
         }
 
-        public IResult Update(Question Question)
+        public IResult Update(Question question)
         {
-            _questionDal.Update(Question);
+            var updatedQuestion = new Question
+            {
+                Title = question.Title,
+                Body = question.Body,
+                Topic = question.Topic,
+                CreatedDate = question.CreatedDate,
+                UpdatedDate=DateTime.UtcNow,
+                UserId = question.UserId,
+
+            };
+            _questionDal.Update(updatedQuestion);
             return new SuccessResult("Question successfully updated");
         }
 

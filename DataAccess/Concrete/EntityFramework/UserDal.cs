@@ -34,6 +34,18 @@ namespace DataAccess.Concrete.EntityFramework
             
         }
 
+        public UserFullNameDto GetFullNameById(int id)
+        {
+            var result = from user in _context.Users
+                         where user.Id == id
+                         select new UserFullNameDto
+                         {
+                             FirstName = user.FirstName,
+                             LastName = user.LastName
+                         };
+            return result.SingleOrDefault();
+        }
+
         public UserFullNameDto GetFullNameByMail(string mail)
         {
             var result = from user in _context.Users

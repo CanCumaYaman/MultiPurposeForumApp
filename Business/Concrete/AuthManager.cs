@@ -58,7 +58,7 @@ namespace Business.Concrete
 
         public IResult UserExists(string email)
         {
-            if (_userService.Exist(p => p.Email != email).Success)
+            if (_userService.GetByMail(email) != null)
             {
                 return new ErrorResult("This user is valid");
             }

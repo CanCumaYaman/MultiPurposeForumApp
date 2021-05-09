@@ -58,7 +58,7 @@ namespace Business.Concrete
             }
             return new ErrorResult("This User is not registered");
         }
-
+       
         public IDataResult<User> Find(Expression<Func<User, bool>> filter)
         {
             return new SuccessDataResult<User>(_userDal.Find(filter));
@@ -73,7 +73,10 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(filter));
         }
-
+        public User GetByMail(string email)
+        {
+            return _userDal.Get(u => u.Email == email);
+        }
         public Task<List<User>> GetAllAsync(Expression<Func<User, bool>> filter = null)
         {
             return _userDal.GetAllAsync(filter);
@@ -108,6 +111,11 @@ namespace Business.Concrete
         public IDataResult<UserFullNameDto> GetFullNameByMail(string mail)
         {
             return new SuccessDataResult<UserFullNameDto>(_userDal.GetFullNameByMail(mail));
+        }
+
+        public IDataResult<UserFullNameDto> GetFullNameById(int id)
+        {
+            return new SuccessDataResult<UserFullNameDto>(_userDal.GetFullNameById(id));
         }
     }
 }

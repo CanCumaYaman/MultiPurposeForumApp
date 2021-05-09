@@ -14,6 +14,7 @@ namespace Core.DataAccess.Abstract
         List<T> GetAll(Expression<Func<T, bool>> filter = null);
         Task<List<T>> GetAllAsync(Expression<Func<T, bool>> filter = null);
         T Find(Expression<Func<T, bool>> filter);
+        T Get(Expression<Func<T, bool>> filter);
         Task<T> FindAsync(Expression<Func<T, bool>> filter);
         T GetById(int id);
         Task<T> GetByIdAsync(int id);
