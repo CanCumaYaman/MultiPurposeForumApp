@@ -20,13 +20,13 @@ namespace DataAccess.Concrete.EntityFramework
 
         }
 
-        public List<QuestionCommentDto> GetAllCommentDto(int id)
+        public List<CommentDto> GetAllCommentDto(int id)
         {
             var result = from questionComment in _context.QuestionComments
                          join user in _context.Users
                          on questionComment.UserId equals user.Id
                          where questionComment.QuestionId == id
-                         select new QuestionCommentDto()
+                         select new CommentDto()
                          {
                              Comment = questionComment.Comment,
                              CommentingFirstName = user.FirstName,

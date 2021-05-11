@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entity.DTOs
 {
-   public class QuestionCommentDto:IDto
+   public class CommentDto:IDto
     {
         public string Comment { get; set; }
         public string CommentingFirstName { get; set; }

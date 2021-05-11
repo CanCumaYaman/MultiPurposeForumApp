@@ -76,9 +76,9 @@ namespace Business.Concrete
             return _questionCommentDal.GetAllAsync(filter);
         }
 
-        public IDataResult<List<QuestionCommentDto>> GetAllCommentDto(int id)
+        public IDataResult<List<CommentDto>> GetAllCommentDto(int id)
         {
-            return new SuccessDataResult<List<QuestionCommentDto>>(_questionCommentDal.GetAllCommentDto(id));
+            return new SuccessDataResult<List<CommentDto>>(_questionCommentDal.GetAllCommentDto(id));
         }
 
         public IDataResult<QuestionComment> GetById(int id)

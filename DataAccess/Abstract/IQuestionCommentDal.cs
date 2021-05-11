@@ -11,6 +11,6 @@ namespace DataAccess.Abstract
 {
    public interface IQuestionCommentDal:IGenericRepository<QuestionComment>
     {
-        List<QuestionCommentDto> GetAllCommentDto(int id);
+        List<CommentDto> GetAllCommentDto(int id);
     }
 }

@@ -48,6 +48,8 @@ namespace WebAPI
             services.AddTransient<IQuestionService, QuestionManager>();
             services.AddTransient<IQuestionDal, QuestionDal>();
             services.AddTransient<IQuestionCommentService, QuestionCommentManager>();
+            services.AddTransient<IArticleCommentService, ArticleCommentManager>();
+            services.AddTransient<IArticleCommentDal, ArticleCommentDal>();
             services.AddTransient<IQuestionCommentDal, QuestionCommentDal>();
             services.AddTransient<IAuthService, AuthManager>();
             services.AddTransient<ITokenHelper, JwtHelper>();

@@ -25,6 +25,6 @@ namespace Business.Abstract
         IResult Update(QuestionComment questionComment);
         IResult UpdateRange(List<QuestionComment> questionComments);
         IResult Exist(Expression<Func<QuestionComment, bool>> filter);
-        IDataResult<List<QuestionCommentDto>> GetAllCommentDto(int id);
+        IDataResult<List<CommentDto>> GetAllCommentDto(int id);
     }
 }
