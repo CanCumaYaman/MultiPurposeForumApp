@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results.Abstract;
 using Entity.Concrete;
+using Entity.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,5 +25,6 @@ namespace Business.Abstract
         IResult Update(QuestionComment questionComment);
         IResult UpdateRange(List<QuestionComment> questionComments);
         IResult Exist(Expression<Func<QuestionComment, bool>> filter);
+        IDataResult<List<QuestionCommentDto>> GetAllCommentDto(int id);
     }
 }

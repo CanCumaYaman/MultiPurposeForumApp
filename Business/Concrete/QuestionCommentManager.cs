@@ -3,6 +3,7 @@ using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
 using Entity.Concrete;
+using Entity.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,6 +74,11 @@ namespace Business.Concrete
         public Task<List<QuestionComment>> GetAllAsync(Expression<Func<QuestionComment, bool>> filter = null)
         {
             return _questionCommentDal.GetAllAsync(filter);
+        }
+
+        public IDataResult<List<QuestionCommentDto>> GetAllCommentDto(int id)
+        {
+            return new SuccessDataResult<List<QuestionCommentDto>>(_questionCommentDal.GetAllCommentDto(id));
         }
 
         public IDataResult<QuestionComment> GetById(int id)

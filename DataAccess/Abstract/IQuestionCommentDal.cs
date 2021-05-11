@@ -1,5 +1,6 @@
 ﻿using Core.DataAccess.Abstract;
 using Entity.Concrete;
+using Entity.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace DataAccess.Abstract
 {
    public interface IQuestionCommentDal:IGenericRepository<QuestionComment>
     {
+        List<QuestionCommentDto> GetAllCommentDto(int id);
     }
 }

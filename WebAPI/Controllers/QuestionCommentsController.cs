@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
         [HttpGet("getcommentbyid")]
         public IActionResult GetQuestionCommentsByQuestionId(int questionId)
         {
-            var result = _questionCommentService.GetAll(p => p.QuestionId == questionId);
+            var result = _questionCommentService.GetAllCommentDto(questionId);
             if (result.Success)
             {
                 return Ok(result);
