@@ -27,11 +27,11 @@ namespace Business.Concrete
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
             var userCheck = _userService.Find(p => p.Email == userForLoginDto.Email);
-            if (userCheck == null)
+            if (userCheck.Data == null)
             {
-                return new ErrorDataResult<User>("Invalid User");
+                return new ErrorDataResult<User>("Invalid User please check your email");
             }
-            if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userCheck.Data.PasswordHash, userCheck.Data.PasswordSalt))
+           if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userCheck.Data.PasswordHash, userCheck.Data.PasswordSalt))
             {
                 return new ErrorDataResult<User>("Password is wrong");
             }
