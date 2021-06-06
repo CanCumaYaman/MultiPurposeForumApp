@@ -21,6 +21,7 @@ namespace Business.Concrete
         {
             _userDal = userDal;
         }
+
         public IResult Add(User user)
         {
             var result = _userDal.Find(p => p.Email == user.Email);

@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
@@ -20,6 +22,7 @@ namespace Business.Concrete
             _questionDal = questionDal;
         }
 
+        [ValidationAspect(typeof(QuestionValidator))]
         public IResult Add(Question question)
         {
             var result = _questionDal.Find(p => p.Title == question.Title);
