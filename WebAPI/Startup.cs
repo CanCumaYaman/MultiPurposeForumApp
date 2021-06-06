@@ -38,21 +38,21 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddTransient<IArticleService, ArticleManager>();
-            services.AddTransient<IArticleDal, ArticleDal>();
-            services.AddTransient<IQuestionService, QuestionManager>();
-            services.AddTransient<IQuestionDal, QuestionDal>();
-            services.AddTransient<IUserService, UserManager>();
-            services.AddTransient<IUserDal, UserDal>();
-            services.AddTransient<IQuestionService, QuestionManager>();
-            services.AddTransient<IQuestionDal, QuestionDal>();
-            services.AddTransient<IQuestionCommentService, QuestionCommentManager>();
-            services.AddTransient<IArticleCommentService, ArticleCommentManager>();
-            services.AddTransient<IArticleCommentDal, ArticleCommentDal>();
-            services.AddTransient<IQuestionCommentDal, QuestionCommentDal>();
-            services.AddTransient<IAuthService, AuthManager>();
-            services.AddTransient<ITokenHelper, JwtHelper>();
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            //services.AddTransient<IArticleService, ArticleManager>();
+            //services.AddTransient<IArticleDal, ArticleDal>();
+            //services.AddTransient<IQuestionService, QuestionManager>();
+            //services.AddTransient<IQuestionDal, QuestionDal>();
+            //services.AddTransient<IUserService, UserManager>();
+            //services.AddTransient<IUserDal, UserDal>();
+            //services.AddTransient<IQuestionService, QuestionManager>();
+            //services.AddTransient<IQuestionDal, QuestionDal>();
+            //services.AddTransient<IQuestionCommentService, QuestionCommentManager>();
+            //services.AddTransient<IArticleCommentService, ArticleCommentManager>();
+            //services.AddTransient<IArticleCommentDal, ArticleCommentDal>();
+            //services.AddTransient<IQuestionCommentDal, QuestionCommentDal>();
+            //services.AddTransient<IAuthService, AuthManager>();
+            //services.AddTransient<ITokenHelper, JwtHelper>();
 
             services.AddCors();
 
@@ -73,8 +73,11 @@ namespace WebAPI
                     };
                 });
             services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
             services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
