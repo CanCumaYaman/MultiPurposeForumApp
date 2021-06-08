@@ -30,7 +30,8 @@ namespace Business.Abstract
         IResult UpdateRange(List<User> users);
         IResult Exist(Expression<Func<User, bool>> filter);
         List<OperationClaim> GetClaims(User user);
-        IDataResult<UserFullNameDto> GetFullNameByMail(string mail);
-        IDataResult<UserFullNameDto> GetFullNameById(int id);
+        IDataResult<string> GetFullNameByMail(string mail);
+        IDataResult<string> GetFullNameById(int id);
+       
     }
 }

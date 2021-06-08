@@ -109,14 +109,16 @@ namespace Business.Concrete
             return _userDal.GetClaims(user);
         }
 
-        public IDataResult<UserFullNameDto> GetFullNameByMail(string mail)
+        public IDataResult<string> GetFullNameByMail(string mail)
         {
-            return new SuccessDataResult<UserFullNameDto>(_userDal.GetFullNameByMail(mail));
+            return new SuccessDataResult<string>(_userDal.GetFullNameByMail(mail));
         }
 
-        public IDataResult<UserFullNameDto> GetFullNameById(int id)
+        public IDataResult<string> GetFullNameById(int id)
         {
-            return new SuccessDataResult<UserFullNameDto>(_userDal.GetFullNameById(id));
+            return new SuccessDataResult<string>(_userDal.GetFullNameById(id));
         }
+
+       
     }
 }

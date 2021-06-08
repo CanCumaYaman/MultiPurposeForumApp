@@ -7,6 +7,7 @@ using Entity.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,27 +35,21 @@ namespace DataAccess.Concrete.EntityFramework
             
         }
 
-        public UserFullNameDto GetFullNameById(int id)
+      
+
+        public string GetFullNameById(int id)
         {
             var result = from user in _context.Users
                          where user.Id == id
-                         select new UserFullNameDto
-                         {
-                             FirstName = user.FirstName,
-                             LastName = user.LastName
-                         };
+                         select user.FullName;
             return result.SingleOrDefault();
         }
 
-        public UserFullNameDto GetFullNameByMail(string mail)
+        public string GetFullNameByMail(string mail)
         {
             var result = from user in _context.Users
                          where user.Email == mail
-                         select new UserFullNameDto
-                         {
-                             FirstName = user.FirstName,
-                            LastName = user.LastName
-                         };
+                         select user.FullName;
             return result.SingleOrDefault();
         }
     }
