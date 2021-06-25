@@ -31,6 +31,17 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getrelated")]
+        public IActionResult GetAllRelatedQuestions(string topic)
+        {
+            var result = _questionService.GetAll(p=>p.Topic.Contains(topic));
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpGet("getbyid")]
 
         public IActionResult GetQuestionById(int questionId)
