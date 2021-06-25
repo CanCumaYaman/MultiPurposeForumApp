@@ -30,16 +30,8 @@ namespace Business.Concrete
             {
                 return new ErrorResult("This Question already added");
             }
-            var addedQuestion = new Question
-            {
-                Title = question.Title,
-                Body = question.Body,
-                Topic = question.Topic,
-                CreatedDate = DateTime.UtcNow,
-                UserId = question.UserId,
-
-            };
-            _questionDal.Add(addedQuestion);
+           
+            _questionDal.Add(question);
             return new SuccessResult("Your Question successfully posted");
         }
 

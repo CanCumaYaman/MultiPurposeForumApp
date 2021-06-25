@@ -20,7 +20,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getall")]
-        public IActionResult GetAllQuestions()
+        public IActionResult GetAllArticles()
         {
             var result = _articleService.GetAll();
             if (result.Success)
@@ -35,6 +35,18 @@ namespace WebAPI.Controllers
         public IActionResult GetArticleById(int articleId)
         {
             var result = _articleService.GetById(articleId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getrelated")]
+
+        public IActionResult GetRelatedArticle(string articleTopic)
+        {
+            var result = _articleService.GetAll(p => p.Topic.Contains(articleTopic));
             if (result.Success)
             {
                 return Ok(result);
