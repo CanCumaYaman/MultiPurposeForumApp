@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Logging;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
@@ -24,6 +25,7 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(QuestionValidator))]
+        [CacheRemoveAspect("IQuestionService.Get")]
         public IResult Add(Question question)
         {
             var result = _questionDal.Find(p => p.Title == question.Title);
@@ -74,6 +76,7 @@ namespace Business.Concrete
         }
 
         [LogAspect]
+        [CacheAspect]
         public IDataResult<List<Question>> GetAll(Expression<Func<Question, bool>> filter = null)
         {
             return new SuccessDataResult<List<Question>>(_questionDal.GetAll(filter));

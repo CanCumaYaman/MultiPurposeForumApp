@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Aspects.Autofac.Caching;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
@@ -20,6 +21,7 @@ namespace Business.Concrete
         {
             _articleDal = articleDal;
         }
+        [CacheRemoveAspect("IArticleService.Get")]
         public IResult Add(Article article)
         {
             var result = _articleDal.Find(p => p.Title == article.Title);
@@ -68,6 +70,7 @@ namespace Business.Concrete
             return _articleDal.FindAsync(filter);
         }
 
+        [CacheAspect]
         public IDataResult<List<Article>> GetAll(Expression<Func<Article, bool>> filter = null)
         {
             return new SuccessDataResult<List<Article>>(_articleDal.GetAll(filter));

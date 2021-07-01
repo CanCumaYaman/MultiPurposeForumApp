@@ -21,21 +21,7 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            //services.AddTransient<IArticleService, ArticleManager>();
-            //services.AddTransient<IArticleDal, ArticleDal>();
-            //services.AddTransient<IQuestionService, QuestionManager>();
-            //services.AddTransient<IQuestionDal, QuestionDal>();
-            //services.AddTransient<IUserService, UserManager>();
-            //services.AddTransient<IUserDal, UserDal>();
-            //services.AddTransient<IQuestionService, QuestionManager>();
-            //services.AddTransient<IQuestionDal, QuestionDal>();
-            //services.AddTransient<IQuestionCommentService, QuestionCommentManager>();
-            //services.AddTransient<IArticleCommentService, ArticleCommentManager>();
-            //services.AddTransient<IArticleCommentDal, ArticleCommentDal>();
-            //services.AddTransient<IQuestionCommentDal, QuestionCommentDal>();
-            //services.AddTransient<IAuthService, AuthManager>();
-            //services.AddTransient<ITokenHelper, JwtHelper>();
+            
             builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>().SingleInstance();
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
             builder.RegisterType<UserDal>().As<IUserDal>().SingleInstance();
