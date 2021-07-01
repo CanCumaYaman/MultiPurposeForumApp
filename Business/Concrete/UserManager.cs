@@ -1,4 +1,7 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Logging;
+using Core.Aspects.Autofac.Validation;
 using Core.Entities.Conrete;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -21,7 +24,8 @@ namespace Business.Concrete
         {
             _userDal = userDal;
         }
-
+        [ValidationAspect(typeof(UserValidator))]
+        
         public IResult Add(User user)
         {
             var result = _userDal.Find(p => p.Email == user.Email);

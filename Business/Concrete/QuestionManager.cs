@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Logging;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -72,6 +73,7 @@ namespace Business.Concrete
             return _questionDal.FindAsync(filter);
         }
 
+        [LogAspect]
         public IDataResult<List<Question>> GetAll(Expression<Func<Question, bool>> filter = null)
         {
             return new SuccessDataResult<List<Question>>(_questionDal.GetAll(filter));

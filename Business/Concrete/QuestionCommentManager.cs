@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Aspects.Autofac.Logging;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
@@ -21,6 +22,8 @@ namespace Business.Concrete
         {
             _questionCommentDal = questionCommentDal;
         }
+
+        [LogAspect]
         public IResult Add(QuestionComment questionComment)
         {
 
