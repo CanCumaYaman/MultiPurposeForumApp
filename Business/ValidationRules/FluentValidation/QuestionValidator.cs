@@ -15,7 +15,7 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(p => p.Title).NotEmpty().WithMessage("Title is required.");
             RuleFor(p => p.Topic).NotEmpty().WithMessage("Topic is required.");
             RuleFor(p => p.Body).NotEmpty().WithMessage("Question body is required.");
-            RuleFor(p => p.Body).MinimumLength(20).WithMessage("Your question must bu more clear.");
+            RuleFor(p => p.Body).MinimumLength(20).WithMessage("Your question must be more clear.");
         }
     }
 }
