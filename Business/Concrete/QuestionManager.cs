@@ -23,10 +23,6 @@ namespace Business.Concrete
         {
             _questionDal = questionDal;
         }
-        public QuestionManager()
-        {
-
-        }
 
         [ValidationAspect(typeof(QuestionValidator))]
         [CacheRemoveAspect("IQuestionService.Get")]
