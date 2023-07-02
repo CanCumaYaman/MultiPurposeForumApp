@@ -1,13 +1,9 @@
 ﻿using AutoFixture;
 using Business.Concrete;
 using Core.DataAccess.Abstract;
-using Core.DataAccess.Concrete.EntityFramework;
-using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
 using Entity.Concrete;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Shouldly;
 
@@ -36,17 +32,13 @@ namespace Tests.Business.Concrete
             Question question = new Question { Title = "test", Body = _fixture.Create<string>(), Topic = _fixture.Create<string>().Substring(0, 5) };
             _mockRepository.Setup(m => m.Find(p => p.Title == "test")).Returns((Question)null).Verifiable();
             _mockRepository.Setup(m => m.Add(question)).Verifiable();
-            _mockDal.Setup(m => m.Find(p=>p.Title == "test")).Returns((Question)null).Verifiable();
+            _mockDal.Setup(m => m.Find(p => p.Title == "test")).Returns((Question)null).Verifiable();
             _mockDal.Setup(m => m.Add(new Question())).Verifiable();
             _service.Find(p => p.Title == "test");
             var result = _service.Add(question);
-            //Assert
-           // result.ShouldBe(new SuccessResult("Your Question successfully posted"));
             result.ShouldBeEquivalentTo(new SuccessResult("Your Question successfully posted"));
             _mockDal.Verify(m => m.Find(p => p.Title == "test"), Times.Once);
             _mockDal.Verify(m => m.Add(question), Times.Once);
-
-
         }
 
     }

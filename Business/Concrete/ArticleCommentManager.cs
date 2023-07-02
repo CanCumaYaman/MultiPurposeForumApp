@@ -6,43 +6,41 @@ using Entity.Concrete;
 using Entity.DTOs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-   public class ArticleCommentManager:IArticleCommentService
+    public class ArticleCommentManager : IArticleCommentService
     {
-        IArticleCommentDal _articleCommentDal;
+        private readonly IArticleCommentDal _articleCommentDal;
 
         public ArticleCommentManager(IArticleCommentDal articleCommentDal)
         {
             _articleCommentDal = articleCommentDal;
         }
-        public IResult Add(ArticleComment article)
+        public IResult Add(ArticleComment articleComment)
         {
-            
-            _articleCommentDal.Add(article);
+
+            _articleCommentDal.Add(articleComment);
             return new SuccessResult("Your Comment successfully posted");
         }
 
-        public IResult AddRange(List<ArticleComment> articles)
+        public IResult AddRange(List<ArticleComment> articleComments)
         {
-            _articleCommentDal.AddRange(articles);
+            _articleCommentDal.AddRange(articleComments);
             return new SuccessResult("Comments successfully posted");
         }
 
-        public IResult Delete(ArticleComment article)
+        public IResult Delete(ArticleComment articleComment)
         {
-            _articleCommentDal.Delete(article);
+            _articleCommentDal.Delete(articleComment);
             return new SuccessResult("Your Comment successfull deleted");
         }
 
-        public IResult DeleteRange(List<ArticleComment> articles)
+        public IResult DeleteRange(List<ArticleComment> articleComments)
         {
-            _articleCommentDal.DeleteRange(articles);
+            _articleCommentDal.DeleteRange(articleComments);
             return new SuccessResult("Comments successfully deleted");
         }
 
@@ -90,15 +88,15 @@ namespace Business.Concrete
             return _articleCommentDal.GetByIdAsync(id);
         }
 
-        public IResult Update(ArticleComment article)
+        public IResult Update(ArticleComment articleComment)
         {
-            _articleCommentDal.Update(article);
+            _articleCommentDal.Update(articleComment);
             return new SuccessResult("Comment successfully updated");
         }
 
-        public IResult UpdateRange(List<ArticleComment> articles)
+        public IResult UpdateRange(List<ArticleComment> articleComments)
         {
-            _articleCommentDal.UpdateRange(articles);
+            _articleCommentDal.UpdateRange(articleComments);
             return new SuccessResult("Comments successfully updated");
         }
     }

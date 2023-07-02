@@ -9,15 +9,10 @@ using Core.Utilities.Security.JWT.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.DependencyResolvers.Autofac
 {
-   public class AutofacBusinessModule:Module
+    public class AutofacBusinessModule:Module
     {
         protected override void Load(ContainerBuilder builder)
         {

@@ -1,10 +1,5 @@
 ﻿using Business.Abstract;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebAPI2.Controllers
 {
@@ -12,8 +7,7 @@ namespace WebAPI2.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        IUserService _userService;
-
+        private readonly IUserService _userService;
         public UsersController(IUserService userService)
         {
             _userService = userService;
@@ -40,7 +34,7 @@ namespace WebAPI2.Controllers
             }
             return BadRequest(result);
 
-         
+
         }
 
         [HttpGet("getfullnamebyid")]
@@ -57,20 +51,20 @@ namespace WebAPI2.Controllers
 
         }
 
-     
+
 
         [HttpGet("getuserid")]
 
-         public IActionResult GetUserIdByMail(string mail)
-         {
+        public IActionResult GetUserIdByMail(string mail)
+        {
             var result = _userService.Find(p => p.Email == mail);
-             if (result.Success)
-             {
-                 return Ok(result.Data.Id);
-             }
-             return BadRequest(result);
+            if (result.Success)
+            {
+                return Ok(result.Data.Id);
+            }
+            return BadRequest(result);
 
-         }
-         
+        }
+
     }
 }

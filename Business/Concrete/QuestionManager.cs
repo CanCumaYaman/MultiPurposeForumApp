@@ -9,16 +9,14 @@ using DataAccess.Abstract;
 using Entity.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
     public class QuestionManager : IQuestionService
     {
-        IQuestionDal _questionDal;
+        private readonly IQuestionDal _questionDal;
         public QuestionManager(IQuestionDal questionDal)
         {
             _questionDal = questionDal;
@@ -33,7 +31,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult("This Question already added");
             }
-           
+
             _questionDal.Add(question);
             return new SuccessResult("Your Question successfully posted");
         }
@@ -105,7 +103,7 @@ namespace Business.Concrete
                 Body = question.Body,
                 Topic = question.Topic,
                 CreatedDate = question.CreatedDate,
-                UpdatedDate=DateTime.UtcNow,
+                UpdatedDate = DateTime.UtcNow,
                 UserId = question.UserId,
 
             };
@@ -113,9 +111,9 @@ namespace Business.Concrete
             return new SuccessResult("Question successfully updated");
         }
 
-        public IResult UpdateRange(List<Question> Questions)
+        public IResult UpdateRange(List<Question> questions)
         {
-            _questionDal.UpdateRange(Questions);
+            _questionDal.UpdateRange(questions);
             return new SuccessResult("Questions successfully updated");
         }
 

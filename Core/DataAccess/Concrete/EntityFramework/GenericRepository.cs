@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Core.DataAccess.Concrete.EntityFramework
@@ -14,7 +13,7 @@ namespace Core.DataAccess.Concrete.EntityFramework
         
     {
         private readonly DbContext _context;
-        private DbSet<TEntity> _dbSet;
+        private readonly DbSet<TEntity> _dbSet;
        
         public GenericRepository(DbContext context)
         {

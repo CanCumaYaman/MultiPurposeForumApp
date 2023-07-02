@@ -5,20 +5,15 @@ using Core.Utilities.Results.Concrete;
 using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.JWT.Abstract;
 using Core.Utilities.Security.JWT.Concrete;
-using Entity.Concrete;
 using Entity.DTOs;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
     public class AuthManager : IAuthService
     {
-        private IUserService _userService;
-        private ITokenHelper _tokenHelper;
+        private readonly IUserService _userService;
+        private readonly ITokenHelper _tokenHelper;
         public AuthManager(IUserService userService, ITokenHelper tokenHelper)
         {
             _userService = userService;
@@ -31,7 +26,7 @@ namespace Business.Concrete
             {
                 return new ErrorDataResult<User>("Invalid User please check your email");
             }
-           if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userCheck.Data.PasswordHash, userCheck.Data.PasswordSalt))
+            if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userCheck.Data.PasswordHash, userCheck.Data.PasswordSalt))
             {
                 return new ErrorDataResult<User>("Password is wrong");
             }
@@ -44,7 +39,7 @@ namespace Business.Concrete
             HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
             var user = new User
             {
-               
+
                 Email = userForRegisterDto.Email,
                 FirstName = userForRegisterDto.FirstName,
                 LastName = userForRegisterDto.LastName,

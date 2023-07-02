@@ -2,19 +2,17 @@
 using Core.CrossCuttingConcerns.Caching;
 using Core.Utilities.Interceptors;
 using Core.Utilities.IoC;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
 
 namespace Core.Aspects.Autofac.Caching
 {
-    public class CacheAspect : MethodInterception
+    public class CacheAspectAttribute : MethodInterceptionAttribute
     {
-        private int _duration;
-        private ICacheManager _cacheManager;
+        private readonly int _duration;
+        private readonly ICacheManager _cacheManager;
 
-        public CacheAspect(int duration = 60)
+        public CacheAspectAttribute(int duration = 60)
         {
             _duration = duration;
             _cacheManager = ServiceTool.ServiceProvider.GetService<ICacheManager>();

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Core.Utilities.Security.JWT.Concrete
+﻿namespace Core.Utilities.Security.JWT.Concrete
 {
-   public class TokenOptions
+    public class TokenOptions
     {
         public string Audience { get; set; }
         public string Issuer { get; set; }

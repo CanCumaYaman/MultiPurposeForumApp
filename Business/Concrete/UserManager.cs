@@ -1,31 +1,26 @@
 ﻿using Business.Abstract;
 using Business.ValidationRules.FluentValidation;
-using Core.Aspects.Autofac.Logging;
 using Core.Aspects.Autofac.Validation;
 using Core.Entities.Conrete;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
-using Entity.Concrete;
-using Entity.DTOs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
     public class UserManager : IUserService
     {
-        IUserDal _userDal;
+        private readonly IUserDal _userDal;
         public UserManager(IUserDal userDal)
         {
             _userDal = userDal;
         }
+
         [ValidationAspect(typeof(UserValidator))]
-        
         public IResult Add(User user)
         {
             var result = _userDal.Find(p => p.Email == user.Email);
@@ -63,7 +58,7 @@ namespace Business.Concrete
             }
             return new ErrorResult("This User is not registered");
         }
-       
+
         public IDataResult<User> Find(Expression<Func<User, bool>> filter)
         {
             return new SuccessDataResult<User>(_userDal.Find(filter));
@@ -123,6 +118,6 @@ namespace Business.Concrete
             return new SuccessDataResult<string>(_userDal.GetFullNameById(id));
         }
 
-       
+
     }
 }

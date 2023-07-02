@@ -7,17 +7,14 @@ using Entity.Concrete;
 using Entity.DTOs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-  public  class QuestionCommentManager:IQuestionCommentService
+    public class QuestionCommentManager : IQuestionCommentService
     {
-        IQuestionCommentDal _questionCommentDal;
-
+        private readonly IQuestionCommentDal _questionCommentDal;
         public QuestionCommentManager(IQuestionCommentDal questionCommentDal)
         {
             _questionCommentDal = questionCommentDal;
@@ -40,7 +37,7 @@ namespace Business.Concrete
         public IResult Delete(QuestionComment questionComment)
         {
             _questionCommentDal.Delete(questionComment);
-            
+
             return new SuccessResult("Your Comment successfull deleted");
         }
 

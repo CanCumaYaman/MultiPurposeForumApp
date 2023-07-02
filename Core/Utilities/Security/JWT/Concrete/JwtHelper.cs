@@ -1,25 +1,21 @@
 ﻿using Core.Entities.Conrete;
+using Core.Extensions;
+using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.JWT.Abstract;
-
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
-using Microsoft.Extensions.DependencyInjection;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Core.Utilities.Security.Encryption;
 using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
+using System.Linq;
 using System.Security.Claims;
-using Core.Extensions;
 
 namespace Core.Utilities.Security.JWT.Concrete
 {
     public class JwtHelper : ITokenHelper
     {
         public IConfiguration Configuration { get; }
-        private TokenOptions _tokenOptions;
+        private readonly TokenOptions _tokenOptions;
         private DateTime _accessTokenExpiration;
         public JwtHelper(IConfiguration configuration)
         {
@@ -42,7 +38,7 @@ namespace Core.Utilities.Security.JWT.Concrete
             };
 
         }
-        public JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions,User user,SigningCredentials signingCredentials,List<OperationClaim> operationClaims)
+        public JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions, User user, SigningCredentials signingCredentials, List<OperationClaim> operationClaims)
         {
             var jwt = new JwtSecurityToken(
                  issuer: tokenOptions.Issuer,
@@ -53,7 +49,7 @@ namespace Core.Utilities.Security.JWT.Concrete
                  signingCredentials: signingCredentials);
             return jwt;
         }
-        private IEnumerable<Claim> SetClaims(User user,List<OperationClaim> operationClaims)
+        private IEnumerable<Claim> SetClaims(User user, List<OperationClaim> operationClaims)
         {
             var claims = new List<Claim>();
             claims.AddNameIdentifier(user.Id.ToString());

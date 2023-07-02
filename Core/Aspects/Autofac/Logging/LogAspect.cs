@@ -2,17 +2,13 @@
 using Core.Utilities.Interceptors;
 using Serilog;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Aspects.Autofac.Logging
 {
-    public class LogAspect : MethodInterception
+    public class LogAspectAttribute : MethodInterceptionAttribute
     {
         private readonly ILogger _logger;
-        public LogAspect()
+        public LogAspectAttribute()
         {
             _logger = Log.ForContext(GetType());
         }

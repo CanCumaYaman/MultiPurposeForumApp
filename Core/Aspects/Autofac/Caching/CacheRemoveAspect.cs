@@ -6,12 +6,12 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Core.Aspects.Autofac.Caching
 {
-    public class CacheRemoveAspect : MethodInterception
+    public class CacheRemoveAspectAttribute : MethodInterceptionAttribute
     {
-        private string _pattern;
-        private ICacheManager _cacheManager;
+        private readonly string _pattern;
+        private readonly ICacheManager _cacheManager;
 
-        public CacheRemoveAspect(string pattern)
+        public CacheRemoveAspectAttribute(string pattern)
         {
             _pattern = pattern;
             _cacheManager = ServiceTool.ServiceProvider.GetService<ICacheManager>();

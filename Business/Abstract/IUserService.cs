@@ -1,23 +1,17 @@
 ﻿using Core.Entities.Conrete;
 using Core.Utilities.Results.Abstract;
-
-using Entity.Concrete;
-using Entity.DTOs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-   public interface IUserService
+    public interface IUserService
     {
         IDataResult<List<User>> GetAll(Expression<Func<User, bool>> filter = null);
         Task<List<User>> GetAllAsync(Expression<Func<User, bool>> filter = null);
         IDataResult<User> Find(Expression<Func<User, bool>> filter);
-
         Task<User> FindAsync(Expression<Func<User, bool>> filter);
         IDataResult<User> GetById(int id);
         User GetByMail(string email);
@@ -32,6 +26,6 @@ namespace Business.Abstract
         List<OperationClaim> GetClaims(User user);
         IDataResult<string> GetFullNameByMail(string mail);
         IDataResult<string> GetFullNameById(int id);
-       
+
     }
 }

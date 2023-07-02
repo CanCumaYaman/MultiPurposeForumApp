@@ -1,11 +1,6 @@
 ﻿using Business.Abstract;
 using Entity.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
@@ -13,8 +8,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class QuestionsController : ControllerBase
     {
-        IQuestionService _questionService;
-
+        private readonly IQuestionService _questionService;
         public QuestionsController(IQuestionService questionService)
         {
             _questionService = questionService;
@@ -34,7 +28,7 @@ namespace WebAPI.Controllers
         [HttpGet("getrelated")]
         public IActionResult GetAllRelatedQuestions(string topic)
         {
-            var result = _questionService.GetAll(p=>p.Topic.Contains(topic));
+            var result = _questionService.GetAll(p => p.Topic.Contains(topic));
             if (result.Success)
             {
                 return Ok(result);

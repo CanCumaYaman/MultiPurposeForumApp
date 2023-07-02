@@ -3,18 +3,15 @@ using DataAccess.Abstract;
 using DataContext.Concrete;
 using Entity.Concrete;
 using Entity.DTOs;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-   public class ArticleCommentDal:GenericRepository<ArticleComment>,IArticleCommentDal
+    public class ArticleCommentDal : GenericRepository<ArticleComment>, IArticleCommentDal
     {
-        private ApplicationDbContext _context;
-        public ArticleCommentDal(ApplicationDbContext context):base(context)
+        private readonly ApplicationDbContext _context;
+        public ArticleCommentDal(ApplicationDbContext context) : base(context)
         {
             _context = context;
         }
